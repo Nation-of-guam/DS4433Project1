@@ -15,3 +15,4 @@ def access_log_generate():
             whatPage = random.randint(1,200000)
 
         cell = [str(i), str(byWho), str(whatPage), accesstype, str(accesstime)]
+        out.append(cell)
