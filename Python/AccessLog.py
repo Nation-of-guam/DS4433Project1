@@ -1,4 +1,5 @@
 import random
+import pandas as pd
 def access_log_generate():
     types = ["viewed", "commented", "added", "liked", "other"]
 
@@ -15,4 +16,8 @@ def access_log_generate():
             whatPage = random.randint(1,200000)
 
         cell = [str(i), str(byWho), str(whatPage), accesstype, str(accesstime)]
-        out.append(cell)
+        out.append(",".join(cell))
+
+    df = pd.DataFrame(out, columns = ["AccessId", "ByWho", "WhatPage", "TypeOfAccess", "AccessTime"])
+    df.to_csv(AccessLog)
+
