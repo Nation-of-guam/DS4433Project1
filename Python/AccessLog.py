@@ -19,5 +19,5 @@ def access_log_generate():
         out.append(",".join(cell))
 
     df = pd.DataFrame(out, columns = ["AccessId", "ByWho", "WhatPage", "TypeOfAccess", "AccessTime"])
-    df.to_csv(AccessLog)
+    df.to_csv("AccessLog")
 
